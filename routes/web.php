@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get( '/', function () {
     return view( 'welcome' );
 } );
+Route::get( '/about', function () {
+    echo "I am about page";
+} );
+Route::get( '/contact', function () {
+    return view( 'contact' );
+} );
