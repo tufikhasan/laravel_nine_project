@@ -18,6 +18,6 @@ Route::get( '/', function () {
     return view( 'welcome' );
 } );
 Route::controller( DemoControllers::class )->group( function () {
-    Route::get( '/about', 'AboutPage' );
+    Route::get( '/about', 'AboutPage' )->middleware( 'check' );
     Route::get( '/contact', 'ContactPage' )->name( 'contact.page' ); //Name route
 } );

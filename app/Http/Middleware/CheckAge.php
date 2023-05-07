@@ -5,8 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class CheckAge
-{
+class CheckAge {
     /**
      * Handle an incoming request.
      *
@@ -14,8 +13,11 @@ class CheckAge
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
-        return $next($request);
+    public function handle( Request $request, Closure $next ) {
+        //url/about?age=21
+        if ( $request->age <= 20 ) {
+            return redirect( 'contact' );
+        }
+        return $next( $request );
     }
 }
