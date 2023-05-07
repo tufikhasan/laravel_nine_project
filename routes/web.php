@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get( '/', function () {
     return view( 'welcome' );
 } );
-Route::get( '/about', [DemoControllers::class, 'AboutPage'] );
-Route::get( '/contact', [DemoControllers::class, 'ContactPage'] );
+Route::controller( DemoControllers::class )->group( function () {
+    Route::get( '/about', 'AboutPage' );
+    Route::get( '/contact', 'ContactPage' );
+} );
