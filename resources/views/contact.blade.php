@@ -10,6 +10,8 @@
 
 <body>
     <h1>I am from contact page</h1>
+    <!-- Get url -->
+    <a href="{{url('/about')}}">About url</a>
 </body>
 
 </html>

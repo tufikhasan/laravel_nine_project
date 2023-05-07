@@ -10,6 +10,8 @@
 
 <body>
     <h1>I am from about page</h1>
+    <!-- Name Route : https://laravel.com/docs/10.x/urls#urls-for-named-routes -->
+    <a href="{{route('contact.page')}}">Contact name route</a>
 </body>
 
 </html>

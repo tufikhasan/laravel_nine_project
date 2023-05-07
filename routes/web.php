@@ -19,5 +19,5 @@ Route::get( '/', function () {
 } );
 Route::controller( DemoControllers::class )->group( function () {
     Route::get( '/about', 'AboutPage' );
-    Route::get( '/contact', 'ContactPage' );
+    Route::get( '/contact', 'ContactPage' )->name( 'contact.page' ); //Name route
 } );
