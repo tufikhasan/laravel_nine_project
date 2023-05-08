@@ -2,6 +2,9 @@
 /public/build
 /public/hot
 /public/storage
+/public/backend/assets/fonts
+/public/backend/assets/images
+/public/backend/assets/libs
 /storage/*.key
 /vendor
 ../.env
