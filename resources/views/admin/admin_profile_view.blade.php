@@ -28,7 +28,7 @@
                         <h4 class="card-title">Name: {{$adminData->name}}</h4>
                         <h4 class="card-title">Email: {{$adminData->email}}</h4>
                         <!-- <p class="card-text"></p> -->
-                        <a href="{{route('profile.edit')}}" class="btn btn-primary waves-effect waves-light px-4 rounded mt-3">Edit Profile</a>
+                        <a href="{{route('edit.profile')}}" class="btn btn-primary waves-effect waves-light px-4 rounded mt-3">Edit Profile</a>
                     </div>
                 </div>
 
