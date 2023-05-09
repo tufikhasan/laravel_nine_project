@@ -19,7 +19,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <form class="card-body">
+                        <form class="card-body" method="POST" action="{{route('update.profile')}}" enctype="multipart/form-data">
+                            @csrf
                             <h4 class="card-title">Update profile</h4>
                             <p class="card-title-desc">Update your account's profile information and email address.</p>
                             <div class="row mb-3">
