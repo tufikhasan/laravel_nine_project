@@ -53,7 +53,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <img class="rounded avatar-lg" src="{{asset('backend/assets/images/users/avatar-1.jpg')}}" alt="{{$editData->name}}" id="showImage">
+                                    <img class="rounded avatar-lg" src="{{ (!empty($editData->profile_image)?url("upload/admin_images/".$editData->profile_image): url('upload/no_image.jpg'))}}" alt="{{$editData->name}}" id="showImage">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info waves-effect waves-light px-4 rounded mt-3">Update Profile</button>

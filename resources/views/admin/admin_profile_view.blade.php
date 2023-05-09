@@ -22,7 +22,7 @@
             <div class="col-md-6 col-xl-4">
                 <!-- Simple card -->
                 <div class="card">
-                    <img class="rounded-circle avatar-lg mx-auto mt-4 mb-2" src="{{asset('backend/assets/images/small/img-1.jpg')}}" alt="Card image cap">
+                    <img class="rounded-circle avatar-lg mx-auto mt-4 mb-2" src="{{ (!empty($adminData->profile_image)?url("upload/admin_images/".$adminData->profile_image): url('upload/no_image.jpg'))}}" alt="{{$adminData->name}}">
                     <div class="card-body">
                         <h4 class="card-title">Username: {{$adminData->username}}</h4>
                         <h4 class="card-title">Name: {{$adminData->name}}</h4>
