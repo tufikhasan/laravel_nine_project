@@ -43,16 +43,16 @@
                             </div>
                             <!-- end row -->
                             <div class="row mb-3">
-                                <label id="profile_image" class="col-sm-2 col-form-label">Profile image</label>
+                                <label for="p_image" class="col-sm-2 col-form-label">Profile image</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="file" id="profile_image" name="profile_image">
+                                    <input class="form-control" type="file" id="p_image" name="profile_image">
                                 </div>
                             </div>
                             <!-- end row -->
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <img class="rounded avatar-lg" src="{{asset('backend/assets/images/users/avatar-1.jpg')}}" alt="{{$editData->name}}">
+                                    <img class="rounded avatar-lg" src="{{asset('backend/assets/images/users/avatar-1.jpg')}}" alt="{{$editData->name}}" id="showImage">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info waves-effect waves-light px-4 rounded mt-3">Update Profile</button>
@@ -61,6 +61,17 @@
                 </div> <!-- end col -->
             </div>
         </div>
-    
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#p_image").change(function(e){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#showImage').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    </script>
 @endsection
