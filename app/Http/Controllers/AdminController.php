@@ -53,6 +53,11 @@ class AdminController extends Controller {
         //save data
         $data->save();
 
-        return redirect()->route( 'admin.profile' );
+        $notification = [
+            'message'    => "Admin Profile Updated Successfully",
+            'alert-type' => 'success',
+        ];
+
+        return redirect()->route( 'admin.profile' )->with( $notification );
     }
 }
