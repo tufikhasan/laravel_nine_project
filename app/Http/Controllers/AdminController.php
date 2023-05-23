@@ -17,8 +17,12 @@ class AdminController extends Controller {
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+        $notification = [
+            'message'    => 'User Logout Successful',
+            'alert-type' => 'success',
+        ];
 
-        return redirect( '/login' );
+        return redirect( '/login' )->with( $notification );
     }
 
     //Profile method
