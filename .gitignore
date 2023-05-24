@@ -5,6 +5,8 @@
 /public/backend/assets/fonts
 /public/backend/assets/images
 /public/backend/assets/libs
+/public/frontend/assets/img
+/public/frontend/assets/fonts
 /storage/*.key
 /vendor
 ../.env
