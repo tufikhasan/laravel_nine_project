@@ -37,7 +37,7 @@
     <!-- Scroll-top-end-->
 
 
-    @include('frontend.body.header');
+    @include('frontend.body.header')
 
     <!-- main-area -->
     <main>
@@ -47,7 +47,7 @@
 
 
 
-    @include('frontend.body.footer');
+    @include('frontend.body.footer')
 
 
 
