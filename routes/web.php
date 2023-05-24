@@ -32,7 +32,7 @@ Route::middleware( 'auth' )->group( function () {
 //Home Slide Controller
 Route::controller( HomeSlideController::class )->group( function () {
     Route::get( '/home/slide', 'homeSlide' )->name( 'home.slide' );
-    Route::post( '/home/slide', 'homeSlideUpdate' )->name( 'home.slide' );
+    Route::post( '/home/slide/{id}', 'homeSlideUpdate' )->name( 'update.slide' );
 } );
 
 require __DIR__ . '/auth.php';

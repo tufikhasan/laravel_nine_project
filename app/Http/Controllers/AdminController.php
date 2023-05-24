@@ -47,6 +47,12 @@ class AdminController extends Controller {
         $data->email = $request->email;
 
         if ( $request->file( 'profile_image' ) ) {
+            //delete old image from folder
+            if ( $data->profile_image ) {
+                unlink( str_replace( '\\', '/', public_path( 'upload/admin_images/' . $data->profile_image ) ) );
+            }
+
+            //get request image
             $file = $request->file( 'profile_image' );
             //image unique name
             $fileName = date( 'YmdHi' ) . "_" . $file->getClientOriginalName();

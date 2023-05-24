@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <form class="card-body" method="POST" action="{{ route('home.slide') }}"
+                        <form class="card-body" method="POST" action="{{ route('update.slide', $homeSlide->id) }}"
                             enctype="multipart/form-data">
                             @csrf
                             <p class="card-title-desc">Update your home slides information</p>
