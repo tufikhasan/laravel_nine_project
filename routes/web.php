@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\About\AboutControllers;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,13 @@ Route::middleware( 'auth' )->group( function () {
 Route::controller( HomeSlideController::class )->group( function () {
     Route::get( '/home/slide', 'homeSlide' )->name( 'home.slide' );
     Route::post( '/home/slide/{id}', 'homeSlideUpdate' )->name( 'update.slide' );
+} );
+
+//Home Slide Controller
+Route::controller( AboutControllers::class )->group( function () {
+    Route::get( '/about/info', 'aboutInfo' )->name( 'about.info' );
+    Route::post( '/update/about/{id}', 'updateAbout' )->name( 'update.about' );
+    Route::get( '/about', 'aboutPage' )->name( 'about.page' );
 } );
 
 require __DIR__ . '/auth.php';
