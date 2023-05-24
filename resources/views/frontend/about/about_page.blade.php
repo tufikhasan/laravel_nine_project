@@ -87,7 +87,7 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="about" role="tabpanel"
                                 aria-labelledby="about-tab">
-                                <p class="desc">{{ $aboutData->long_desc }}</p>
+                                {!! $aboutData->long_desc !!}
                             </div>
                             <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                                 <div class="about__skill__wrap">

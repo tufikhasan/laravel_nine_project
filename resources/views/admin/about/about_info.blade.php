@@ -58,7 +58,7 @@
                             <div class="row mb-3">
                                 <label for="elm1" class="col-sm-2 col-form-label">Long Description</label>
                                 <div class="col-sm-10">
-                                    <textarea id="elm1" name="long_desc">{{ $aboutData->short_desc }}</textarea>
+                                    <textarea id="elm1" name="long_desc">{!! $aboutData->long_desc !!}</textarea>
                                 </div>
                             </div>
                             <!-- end row -->
