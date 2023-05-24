@@ -41,8 +41,15 @@ Route::controller( AboutControllers::class )->group( function () {
     Route::get( '/about/info', 'aboutInfo' )->name( 'about.info' );
     Route::post( '/update/about/{id}', 'updateAbout' )->name( 'update.about' );
     Route::get( '/about', 'aboutPage' )->name( 'about.page' );
+
     Route::get( '/multi/image', 'multiImage' )->name( 'multi.image' );
     Route::post( '/multi/image', 'storeMultiImage' )->name( 'multi.image' );
+    Route::get( '/all/multi', 'allMultiImage' )->name( 'all.multi' );
+
+    Route::get( '/multi/image/{id}', 'editMultiImage' )->name( 'edit.multi.image' );
+    Route::post( '/multi/image/{id}', 'updateMultiImage' )->name( 'update.multi.image' );
+    Route::delete( '/multi/image/{id}', 'deleteMultiImage' )->name( 'delete.multi.image' );
+
 } );
 
 require __DIR__ . '/auth.php';
