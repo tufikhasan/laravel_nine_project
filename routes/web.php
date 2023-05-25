@@ -48,7 +48,7 @@ Route::controller( AboutControllers::class )->group( function () {
 
     Route::get( '/multi/image/{id}', 'editMultiImage' )->name( 'edit.multi.image' );
     Route::post( '/multi/image/{id}', 'updateMultiImage' )->name( 'update.multi.image' );
-    Route::delete( '/multi/image/{id}', 'deleteMultiImage' )->name( 'delete.multi.image' );
+    Route::get( '/delete/multi/image/{id}', 'deleteMultiImage' )->name( 'delete.multi.image' );
 
 } );
 

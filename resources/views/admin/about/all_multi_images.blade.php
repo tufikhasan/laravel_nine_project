@@ -44,10 +44,11 @@
                                                 <a href="{{ route('edit.multi.image', $value->id) }}"
                                                     class="btn btn-info sm waves-effect waves-light mr-2"
                                                     title="Edit Image"><i class="fas fa-edit"></i></a>
-                                                {{-- <a href="{{ route('delete.multi.image', $value->id) }}"
+                                                <a id="delete_multi_image"
+                                                    href="{{ route('delete.multi.image', $value->id) }}"
                                                     class="btn btn-danger sm waves-effect waves-light mr-2"
-                                                    title="Delete Image"><i class=" fas fa-trash-alt"></i></a> --}}
-                                                <form action="{{ route('delete.multi.image', $value->id) }}" method="POST"
+                                                    title="Delete Image"><i class=" fas fa-trash-alt"></i></a>
+                                                {{-- <form action="{{ route('delete.multi.image', $value->id) }}" method="POST"
                                                     style="display:inline">
                                                     @csrf
                                                     @method('DELETE')
@@ -56,7 +57,7 @@
                                                         title="Delete Image">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
-                                                </form>
+                                                </form> --}}
                                             </td>
                                         </tr>
                                     @endforeach

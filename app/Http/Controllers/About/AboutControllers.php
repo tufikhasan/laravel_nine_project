@@ -120,6 +120,6 @@ class AboutControllers extends Controller {
             'message'    => "Image Deleted Successfully",
             'alert-type' => 'success',
         ];
-        return redirect()->route( 'all.multi' )->with( $notification );
+        return redirect()->back()->with( $notification );
     }
 }
