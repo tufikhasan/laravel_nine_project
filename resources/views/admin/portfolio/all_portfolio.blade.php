@@ -6,11 +6,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">All Multi Images</h4>
+                        <h4 class="mb-sm-0">All Portfolios</h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Upcube</a></li>
-                                <li class="breadcrumb-item active">All Multi Images</li>
+                                <li class="breadcrumb-item active">All Portfolios</li>
                             </ol>
                         </div>
                     </div>
@@ -27,32 +27,38 @@
                                 <thead>
                                     <tr>
                                         <th>SL NO:</th>
-                                        <th>Name</th>
+                                        <th>Portfolio Name</th>
+                                        <th>Portfolio Title</th>
+                                        <th>Portfolio Description</th>
+                                        <th>Portfolio link</th>
+                                        <th>Portfolio image</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-
-
                                 <tbody>
-                                    @foreach ($allImages as $key => $value)
+                                    @foreach ($portfolios as $key => $value)
                                         <tr>
                                             <td style="width: 20px">{{ $key + 1 }}
                                             </td>
-                                            <td><img src="{{ url('upload/multi/' . $value->image) }}"
+                                            <td>{{ $value->portfolio_name }}</td>
+                                            <td>{{ $value->portfolio_title }}</td>
+                                            <td>{!! $value->portfolio_description !!}</td>
+                                            <td>{{ $value->portfolio_link }}</td>
+                                            <td><img src="{{ !empty($value->portfolio_image) ? url('upload/portfolio/' . $value->portfolio_image) : url('upload/no_image.jpg') }}"
                                                     alt="{{ $key }}" class="rounded avatar-sm"></td>
                                             <td>
-                                                <a href="{{ route('edit.multi.image', $value->id) }}"
+                                                <a href="{{ route('edit.portfolio', $value->id) }}"
                                                     class="btn btn-info sm waves-effect waves-light mr-2"
                                                     title="Edit Image"><i class="fas fa-edit"></i></a>
-                                                <a id="delete_data_alert"
-                                                    href="{{ route('delete.multi.image', $value->id) }}"
+                                                <a id="delete_data_alert" href="{{ route('delete.portfolio', $value->id) }}"
                                                     class="btn btn-danger sm waves-effect waves-light mr-2"
-                                                    title="Delete Image"><i class=" fas fa-trash-alt"></i></a>
-                                                {{-- <form action="{{ route('delete.multi.image', $value->id) }}" method="POST"
+                                                    title="Delete Portfolio"><i class=" fas fa-trash-alt"></i></a>
+
+                                                {{-- <form action="{{ route('delete.portfolio', $value->id) }}" method="POST"
                                                     style="display:inline">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit"
+                                                    <button type="submit" id="delete_data_alert"
                                                         class="btn btn-danger sm waves-effect waves-light mr-2"
                                                         title="Delete Image">
                                                         <i class="fas fa-trash-alt"></i>

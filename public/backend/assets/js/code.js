@@ -1,5 +1,5 @@
 $(function () {
-    $(document).on("click", "#delete_multi_image", function (e) {
+    $(document).on("click", "#delete_data_alert", function (e) {
         e.preventDefault();
         var link = $(this).attr("href");
 

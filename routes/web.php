@@ -3,6 +3,7 @@
 use App\Http\Controllers\About\AboutControllers;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSlideController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,17 @@ Route::controller( AboutControllers::class )->group( function () {
     Route::post( '/multi/image/{id}', 'updateMultiImage' )->name( 'update.multi.image' );
     Route::get( '/delete/multi/image/{id}', 'deleteMultiImage' )->name( 'delete.multi.image' );
 
+} );
+
+Route::controller( PortfolioController::class )->group( function () {
+    Route::get( '/all/portfolios', 'allPortfolio' )->name( 'all.portfolio' );
+    Route::get( '/add/portfolio', 'addPortfolio' )->name( 'add.portfolio' );
+    Route::post( '/add/portfolio', 'storePortfolio' )->name( 'store.portfolio' );
+    Route::get( '/edit/portfolio/{id}', 'editPortfolio' )->name( 'edit.portfolio' );
+    Route::patch( '/edit/portfolio/{id}', 'updatePortfolio' )->name( 'update.portfolio' );
+    Route::get( '/edit/portfolio/{id}', 'editPortfolio' )->name( 'edit.portfolio' );
+    Route::get( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
+    // Route::delete( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
 } );
 
 require __DIR__ . '/auth.php';
