@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <p class="desc">{{ $aboutData->short_desc }}</p>
-                    <a href="about.html" class="btn">Download my resume</a>
+                    <a href="{{ route('about.page') }}" class="btn">Download my resume</a>
                 </div>
             </div>
         </div>

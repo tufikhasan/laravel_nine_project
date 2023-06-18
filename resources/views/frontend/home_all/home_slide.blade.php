@@ -7,7 +7,7 @@
         <div class="row align-items-center justify-content-center justify-content-lg-between">
             <div class="col-lg-6 order-0 order-lg-2">
                 <div class="banner__img text-center text-xxl-end">
-                    <img src="{{ $homeSlides->home_slide ? url('upload/home_slide/' . $homeSlides->home_slide) : url('upload/no_image.jpg') }}"
+                    <img src="{{ !empty($homeSlides->home_slide) ? url('upload/home_slide/' . $homeSlides->home_slide) : url('upload/no_image.jpg') }}"
                         alt="{{ $homeSlides->title }}">
                 </div>
             </div>

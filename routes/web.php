@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\About\AboutControllers;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
@@ -53,6 +54,7 @@ Route::controller( AboutControllers::class )->group( function () {
 
 } );
 
+//Portfolio all route
 Route::controller( PortfolioController::class )->group( function () {
     Route::get( '/all/portfolios', 'allPortfolio' )->name( 'all.portfolio' );
     Route::get( '/add/portfolio', 'addPortfolio' )->name( 'add.portfolio' );
@@ -63,6 +65,16 @@ Route::controller( PortfolioController::class )->group( function () {
     Route::get( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
     // Route::delete( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
     Route::get( '/portfolio/details/{id}', 'detailsPortfolio' )->name( 'portfolio.details' );
+} );
+
+//Blog Category all route
+Route::controller( BlogCategoryController::class )->group( function () {
+    Route::get( '/all/category', 'allCategory' )->name( 'all.category' );
+    Route::get( '/add/category', 'addCategory' )->name( 'add.category' );
+    Route::post( '/add/category', 'storeCategory' )->name( 'store.category' );
+    Route::get( '/edit/category/{id}', 'editCategory' )->name( 'edit.category' );
+    Route::patch( '/edit/category/{id}', 'updateCategory' )->name( 'update.category' );
+    Route::get( '/delete/category/{id}', 'deleteCategory' )->name( 'delete.category' );
 } );
 
 require __DIR__ . '/auth.php';

@@ -36,7 +36,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about__image">
-                        <img src="{{ $aboutData->about_image ? url('upload/about/' . $aboutData->about_image) : url('upload/no_image.jpg') }}"
+                        <img src="{{ !empty($aboutData->about_image) ? url('upload/about/' . $aboutData->about_image) : url('upload/no_image.jpg') }}"
                             alt="{{ $aboutData->title }}">
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <p class="desc">{{ $aboutData->short_desc }}</p>
-                        <a href="about.html" class="btn">Download my resume</a>
+                        <a href="{{ route('about.page') }}" class="btn">Download my resume</a>
                     </div>
                 </div>
             </div>
