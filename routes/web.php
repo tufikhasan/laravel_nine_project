@@ -62,6 +62,7 @@ Route::controller( PortfolioController::class )->group( function () {
     Route::get( '/edit/portfolio/{id}', 'editPortfolio' )->name( 'edit.portfolio' );
     Route::get( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
     // Route::delete( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
+    Route::get( '/portfolio/details/{id}', 'detailsPortfolio' )->name( 'portfolio.details' );
 } );
 
 require __DIR__ . '/auth.php';
