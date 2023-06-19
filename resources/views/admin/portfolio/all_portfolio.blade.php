@@ -49,7 +49,7 @@
                                             <td>
                                                 <a href="{{ route('edit.portfolio', $value->id) }}"
                                                     class="btn btn-info sm waves-effect waves-light mr-2"
-                                                    title="Edit Image"><i class="fas fa-edit"></i></a>
+                                                    title="Edit Portfolio"><i class="fas fa-edit"></i></a>
                                                 <a id="delete_data_alert" href="{{ route('delete.portfolio', $value->id) }}"
                                                     class="btn btn-danger sm waves-effect waves-light mr-2"
                                                     title="Delete Portfolio"><i class=" fas fa-trash-alt"></i></a>

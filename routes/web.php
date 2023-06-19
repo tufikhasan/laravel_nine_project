@@ -3,6 +3,7 @@
 use App\Http\Controllers\About\AboutControllers;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
@@ -75,6 +76,16 @@ Route::controller( BlogCategoryController::class )->group( function () {
     Route::get( '/edit/category/{id}', 'editCategory' )->name( 'edit.category' );
     Route::patch( '/edit/category/{id}', 'updateCategory' )->name( 'update.category' );
     Route::get( '/delete/category/{id}', 'deleteCategory' )->name( 'delete.category' );
+} );
+
+//Blog all route
+Route::controller( BlogController::class )->group( function () {
+    Route::get( '/all/blog', 'allBlog' )->name( 'all.blog' );
+    Route::get( '/add/blog', 'addBlog' )->name( 'add.blog' );
+    Route::post( '/add/blog', 'storeBlog' )->name( 'store.blog' );
+    Route::get( '/edit/blog/{id}', 'editBlog' )->name( 'edit.blog' );
+    Route::patch( '/edit/blog/{id}', 'updateBlog' )->name( 'update.blog' );
+    Route::get( '/delete/blog/{id}', 'deleteBlog' )->name( 'delete.blog' );
 } );
 
 require __DIR__ . '/auth.php';
