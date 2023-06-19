@@ -40,7 +40,7 @@
                                         <tr>
                                             <td style="width: 20px">{{ $key + 1 }}
                                             </td>
-                                            <td>{{ $value->blog_category_id }}</td>
+                                            <td>{{ $value['categoryFun']['blog_category'] }}</td>
                                             <td>{{ $value->blog_title }}</td>
                                             <td>{{ $value->blog_tags }}</td>
                                             <td><img src="{{ !empty($value->blog_image) ? url('upload/blog/' . $value->blog_image) : url('upload/no_image.jpg') }}"
