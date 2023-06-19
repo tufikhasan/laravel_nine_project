@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                             @empty
-                                <h4 class="text-center text-fuchsia-600">No portfolio found</h4>
+                                <img src="{{ asset('no_data.jpg') }}">
                             @endforelse
 
                         </div>
