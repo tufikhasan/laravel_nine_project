@@ -20,11 +20,11 @@
                                     <li><a href="#Services">Services</a></li>
                                     <li><a href="#portfolio">Portfolio</a></li>
                                     <li><a href="{{ route('blog.page') }}">Our Blog</a></li>
-                                    <li><a href="contact.html">contact me</a></li>
+                                    <li><a href="{{ route('contact.me') }}">contact me</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
-                                <a href="contact.html" class="btn">Contact me</a>
+                                <a href="{{ route('contact.me') }}" class="btn">Contact me</a>
                             </div>
                         </nav>
                     </div>
@@ -34,7 +34,8 @@
                             <div class="close__btn"><i class="fal fa-times"></i></div>
                             <div class="nav-logo">
                                 <a href="{{ url('/') }}" class="logo__black"><img
-                                        src="{{ asset('frontend/assets/img/logo/logo_black.png') }}" alt=""></a>
+                                        src="{{ asset('frontend/assets/img/logo/logo_black.png') }}"
+                                        alt=""></a>
                                 <a href="{{ url('/') }}" class="logo__white"><img
                                         src="{{ asset('frontend/assets/img/logo/logo_white.png') }}"
                                         alt=""></a>

@@ -6,11 +6,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">All Blog Category</h4>
+                        <h4 class="mb-sm-0">All Contact</h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Upcube</a></li>
-                                <li class="breadcrumb-item active">All Blog Category</li>
+                                <li class="breadcrumb-item active">All Contact</li>
                             </ol>
                         </div>
                     </div>
@@ -27,25 +27,27 @@
                                 <thead>
                                     <tr>
                                         <th>SL NO:</th>
-                                        <th>Blog Id</th>
-                                        <th>Blog Category</th>
-                                        <th>Actions</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Subject</th>
+                                        <th>Budget</th>
+                                        <th>Message</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($blogCategories as $key => $value)
+                                    @foreach ($contacts as $key => $value)
                                         <tr>
                                             <td style="width: 20px">{{ $key + 1 }}
                                             </td>
-                                            <td>{{ $value->id }}</td>
-                                            <td>{{ $value->blog_category }}</td>
+                                            <td>{{ $value->name }}</td>
+                                            <td>{{ $value->email }}</td>
+                                            <td>{{ $value->subject }}</td>
+                                            <td>{{ $value->budget }}</td>
+                                            <td>{{ $value->message }}</td>
                                             <td>
-                                                <a href="{{ route('edit.category', $value->id) }}"
-                                                    class="btn btn-info sm waves-effect waves-light mr-2"
-                                                    title="Edit Category"><i class="fas fa-edit"></i></a>
-                                                <a id="delete_data_alert" href="{{ route('delete.category', $value->id) }}"
+                                                <a id="delete_data_alert" href="{{ route('delete.contact', $value->id) }}"
                                                     class="btn btn-danger sm waves-effect waves-light mr-2"
-                                                    title="Delete Category"><i class=" fas fa-trash-alt"></i></a>
+                                                    title="Delete Contact"><i class=" fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -4,6 +4,7 @@ use App\Http\Controllers\About\AboutControllers;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
@@ -97,6 +98,14 @@ Route::controller( FooterController::class )->group( function () {
     //Seeding footer demo data command=> php artisan db:seed --class=FooterSeeder
     Route::get( '/footer/setup', 'footerSetup' )->name( 'footer.setup' );
     Route::patch( '/footer/setup/{id}', 'updateFooter' )->name( 'update.footer' );
+} );
+
+//Footer all route
+Route::controller( ContactController::class )->group( function () {
+    Route::get( '/all/contact', 'allContact' )->name( 'all.contact' );
+    Route::get( '/contact/page', 'contactPage' )->name( 'contact.me' );
+    Route::post( '/contact/page', 'contactUs' )->name( 'contact.us' );
+    Route::get( '/delete/contact/{id}', 'deleteContact' )->name( 'delete.contact' );
 } );
 
 require __DIR__ . '/auth.php';

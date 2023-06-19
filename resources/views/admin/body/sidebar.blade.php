@@ -93,6 +93,12 @@
                         <li><a href="{{ route('footer.setup') }}">Footer Setup</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{ route('all.contact') }}" class="waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>All Contacts</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
