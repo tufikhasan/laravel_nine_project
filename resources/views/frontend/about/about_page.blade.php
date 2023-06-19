@@ -2,6 +2,9 @@
     $multi_image = App\Models\Multi_image::take(6)->get();
 @endphp
 @extends('frontend.app_master')
+@section('site_title')
+    About - Personal Portfolio
+@endsection
 @section('main')
     <!-- breadcrumb-area -->
     <section class="breadcrumb__wrap">
