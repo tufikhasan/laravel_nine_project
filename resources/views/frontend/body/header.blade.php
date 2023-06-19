@@ -1,3 +1,6 @@
+@php
+    $route = Route::current()->getName();
+@endphp
 <!-- header-area -->
 <header>
     <div id="sticky-header" class="menu__area transparent-header">
@@ -8,19 +11,24 @@
                     <div class="menu__wrap">
                         <nav class="menu__nav">
                             <div class="logo">
-                                <a href="{{ url('/') }}" class="logo__black"><img
-                                        src="{{ asset('frontend/assets/img/logo/logo_black.png') }}" alt=""></a>
-                                <a href="{{ url('/') }}" class="logo__white"><img
-                                        src="{{ asset('frontend/assets/img/logo/logo_white.png') }}" alt=""></a>
+                                <a href="{{ route('home.page') }}" class="logo__black"><img
+                                        src="{{ asset('frontend/assets/img/logo/logo_black.png') }}" alt="Rasalina"></a>
+                                <a href="{{ route('home.page') }}" class="logo__white"><img
+                                        src="{{ asset('frontend/assets/img/logo/logo_white.png') }}" alt="Rasalina"></a>
                             </div>
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
-                                    <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                                    <li><a href="{{ route('about.page') }}">About</a></li>
+                                    <li class="{{ 'home.page' == $route ? 'active' : '' }}"><a
+                                            href="{{ route('home.page') }}">Home</a></li>
+                                    <li class="{{ 'about.page' == $route ? 'active' : '' }}"><a
+                                            href="{{ route('about.page') }}">About</a></li>
                                     <li><a href="#Services">Services</a></li>
-                                    <li><a href="{{ route('portfolio.page') }}">Portfolio</a></li>
-                                    <li><a href="{{ route('blog.page') }}">Our Blog</a></li>
-                                    <li><a href="{{ route('contact.me') }}">contact me</a></li>
+                                    <li class="{{ 'portfolio.page' == $route ? 'active' : '' }}"><a
+                                            href="{{ route('portfolio.page') }}">Portfolio</a></li>
+                                    <li class="{{ 'blog.page' == $route ? 'active' : '' }}"><a
+                                            href="{{ route('blog.page') }}">Our Blog</a></li>
+                                    <li class="{{ 'contact.me' == $route ? 'active' : '' }}"><a
+                                            href="{{ route('contact.me') }}">contact me</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
@@ -33,12 +41,12 @@
                         <nav class="menu__box">
                             <div class="close__btn"><i class="fal fa-times"></i></div>
                             <div class="nav-logo">
-                                <a href="{{ url('/') }}" class="logo__black"><img
+                                <a href="{{ route('home.page') }}" class="logo__black"><img
                                         src="{{ asset('frontend/assets/img/logo/logo_black.png') }}"
-                                        alt=""></a>
-                                <a href="{{ url('/') }}" class="logo__white"><img
+                                        alt="Rasalina"></a>
+                                <a href="{{ route('home.page') }}" class="logo__white"><img
                                         src="{{ asset('frontend/assets/img/logo/logo_white.png') }}"
-                                        alt=""></a>
+                                        alt="Rasalina"></a>
                             </div>
                             <div class="menu__outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->

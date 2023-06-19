@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get( '/', function () {
     return view( 'frontend.index' );
-} );
+} )->name( 'home.page' );
 
 //Admin Controller
 Route::controller( AdminController::class )->group( function () {
@@ -41,7 +41,7 @@ Route::controller( HomeSlideController::class )->group( function () {
     Route::post( '/home/slide/{id}', 'homeSlideUpdate' )->name( 'update.slide' );
 } );
 
-//Home Slide Controller
+//About Slide All route
 Route::controller( AboutControllers::class )->group( function () {
     Route::get( '/about/info', 'aboutInfo' )->name( 'about.info' );
     Route::post( '/update/about/{id}', 'updateAbout' )->name( 'update.about' );
