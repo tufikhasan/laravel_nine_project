@@ -68,6 +68,7 @@ Route::controller( PortfolioController::class )->group( function () {
     Route::get( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
     // Route::delete( '/delete/portfolio/{id}', 'deletePortfolio' )->name( 'delete.portfolio' );
     Route::get( '/portfolio/details/{id}', 'detailsPortfolio' )->name( 'portfolio.details' );
+    Route::get( '/portfolios', 'portfolioPage' )->name( 'portfolio.page' );
 } );
 
 //Blog Category all route
@@ -90,7 +91,7 @@ Route::controller( BlogController::class )->group( function () {
     Route::get( '/delete/blog/{id}', 'deleteBlog' )->name( 'delete.blog' );
     Route::get( '/blog/details/{id}', 'blogDetails' )->name( 'blog.details' );
     Route::get( '/category/blogs/{id}', 'categoryBlogs' )->name( 'category.blogs' );
-    Route::get( '/out/blog', 'blogPage' )->name( 'blog.page' );
+    Route::get( '/blogs', 'blogPage' )->name( 'blog.page' );
 } );
 
 //Footer all route
@@ -100,10 +101,10 @@ Route::controller( FooterController::class )->group( function () {
     Route::patch( '/footer/setup/{id}', 'updateFooter' )->name( 'update.footer' );
 } );
 
-//Footer all route
+//Contact all route
 Route::controller( ContactController::class )->group( function () {
     Route::get( '/all/contact', 'allContact' )->name( 'all.contact' );
-    Route::get( '/contact/page', 'contactPage' )->name( 'contact.me' );
+    Route::get( '/contact', 'contactPage' )->name( 'contact.me' );
     Route::post( '/contact/page', 'contactUs' )->name( 'contact.us' );
     Route::get( '/delete/contact/{id}', 'deleteContact' )->name( 'delete.contact' );
 } );

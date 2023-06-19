@@ -113,19 +113,19 @@ class BlogController extends Controller {
         $blog = Blogs::findOrFail( $id );
         $allBlogs = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
-        return view( 'frontend.blog_details', compact( 'blog', 'allBlogs', 'categories' ) );
+        return view( 'frontend.blogs.blog_details', compact( 'blog', 'allBlogs', 'categories' ) );
     }
     function categoryBlogs( Request $request, $id ) {
         $category = BlogCategory::findOrFail( $id );
         $categoryBlogs = Blogs::where( 'blog_category_id', $id )->latest()->get();
         $allBlogs = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
-        return view( 'frontend.category_wise_blog', compact( 'category', 'categoryBlogs', 'allBlogs', 'categories' ) );
+        return view( 'frontend.blogs.category_wise_blog', compact( 'category', 'categoryBlogs', 'allBlogs', 'categories' ) );
     }
     function blogPage() {
         $allBlogs = Blogs::latest()->get();
         $recentBlog = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
-        return view( 'frontend.blog_page', compact( 'allBlogs', 'recentBlog', 'categories' ) );
+        return view( 'frontend.blogs.blog_page', compact( 'allBlogs', 'recentBlog', 'categories' ) );
     }
 }

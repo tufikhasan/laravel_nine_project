@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller {
     function contactPage() {
-        return view( 'frontend.contact_me' );
+        return view( 'frontend.contact.contact_me' );
     }
     function contactUs( Request $request ) {
         //request validation

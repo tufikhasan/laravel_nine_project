@@ -61,10 +61,6 @@
                                 <li><span>Date :</span> January, 2021</li>
                                 <li><span>Location :</span> East Meadow NY 11554</li>
                                 <li><span>Client :</span> American</li>
-                                <li class="cagegory"><span>Category :</span>
-                                    <a href="portfolio.html">Photo,</a>
-                                    <a href="portfolio.html">UI/UX</a>
-                                </li>
                                 <li><span>Project Link :</span> <a
                                         href="{{ $portfolio->portfolio_link }}">{{ $portfolio->portfolio_link }}</a></li>
                             </ul>

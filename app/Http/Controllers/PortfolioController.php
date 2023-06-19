@@ -111,7 +111,11 @@ class PortfolioController extends Controller {
 
     function detailsPortfolio( Request $request, $id ) {
         $portfolio = portfolios::findOrFail( $id );
-        return view( 'frontend.portfolio_details', compact( 'portfolio' ) );
+        return view( 'frontend.portfolio.portfolio_details', compact( 'portfolio' ) );
+    }
+    function portfolioPage() {
+        $portfolios = portfolios::latest()->get();
+        return view( 'frontend.portfolio.portfolio_page', compact( 'portfolios' ) );
     }
 
 }
