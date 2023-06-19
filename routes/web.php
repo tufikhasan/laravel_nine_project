@@ -87,6 +87,8 @@ Route::controller( BlogController::class )->group( function () {
     Route::patch( '/edit/blog/{id}', 'updateBlog' )->name( 'update.blog' );
     Route::get( '/delete/blog/{id}', 'deleteBlog' )->name( 'delete.blog' );
     Route::get( '/blog/details/{id}', 'blogDetails' )->name( 'blog.details' );
+    Route::get( '/category/blogs/{id}', 'categoryBlogs' )->name( 'category.blogs' );
+    Route::get( '/out/blog', 'blogPage' )->name( 'blog.page' );
 } );
 
 require __DIR__ . '/auth.php';

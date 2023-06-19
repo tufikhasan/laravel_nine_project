@@ -9,11 +9,11 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
                     <div class="breadcrumb__wrap__content">
-                        <h2 class="title">{{ $blog->blog_title }}</h2>
+                        <h2 class="title">Recent Article</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">BLOG DETAILS</li>
+                                <li class="breadcrumb-item active" aria-current="page">BLOG</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,47 +30,45 @@
     </section>
     <!-- breadcrumb-area-end -->
 
-    <!-- blog-details-area -->
-    <section class="standard__blog blog__details">
+    <!-- blog-area -->
+    <section class="standard__blog">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="standard__blog__post">
-                        <div class="standard__blog__thumb">
-                            <img src="{{ !empty($blog->blog_image) ? url('upload/blog/' . $blog->blog_image) : url('upload/portfolio.jpg') }}"
-                                alt="{{ $blog->blog_title }}">
+                    @forelse ($allBlogs as $data)
+                        <div class="standard__blog__post">
+                            <div class="standard__blog__thumb">
+                                <a href="{{ route('blog.details', $data->id) }}"><img
+                                        src="{{ !empty($data->blog_image) ? url('upload/blog/' . $data->blog_image) : url('upload/portfolio.jpg') }}"
+                                        alt="{{ $data->blog_title }}"></a>
+                                <a href="{{ route('blog.details', $data->id) }}" class="blog__link"><i
+                                        class="far fa-long-arrow-right"></i></a>
+                            </div>
+                            <div class="standard__blog__content">
+                                <h2 class="title"><a
+                                        href="{{ route('blog.details', $data->id) }}">{{ $data->blog_title }}</a></h2>
+                                <p>{!! $data->blog_description !!}</p>
+                                <ul class="blog__post__meta">
+                                    <li><i class="fal fa-calendar-alt"></i>
+                                        {{ Carbon\Carbon::parse($data->created_at)->diffForHumans() }}</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="blog__details__content services__details__content">
-                            <ul class="blog__post__meta">
-                                <li><i class="fal fa-calendar-alt"></i>
-                                    {{ Carbon\Carbon::parse($blog->created_at)->diffForHumans() }}
-                                </li>
+                    @empty
+                        <img src="{{ asset('no_data.jpg') }}">
+                    @endforelse
+
+                    <div class="pagination-wrap">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#"><i
+                                            class="far fa-long-arrow-left"></i></a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#"><i
+                                            class="far fa-long-arrow-right"></i></a></li>
                             </ul>
-                            <h2 class="title">{{ $blog->blog_title }}</h2>
-                            <div>{!! $blog->blog_description !!}</div>
-                        </div>
-                        <div class="blog__details__bottom">
-                            <ul class="blog__details__tag">
-                                <li class="title">Tag:</li>
-                                <li class="tags-list">
-                                    @php
-                                        $tags = explode(',', $blog->blog_tags);
-                                    @endphp
-                                    @foreach ($tags as $tag)
-                                        <a>{{ $tag }}</a>
-                                    @endforeach
-                                </li>
-                            </ul>
-                            <ul class="blog__details__social">
-                                <li class="title">Share :</li>
-                                <li class="social-icons">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-twitter-square"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                        </nav>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -84,7 +82,7 @@
                         <div class="widget">
                             <h4 class="widget-title">Recent Blog</h4>
                             <ul class="rc__post">
-                                @foreach ($allBlogs as $data)
+                                @foreach ($recentBlog as $data)
                                     <li class="rc__post__item">
                                         <div class="rc__post__thumb">
                                             <a href="{{ route('blog.details', $data->id) }}"><img
@@ -101,7 +99,6 @@
                                         </div>
                                     </li>
                                 @endforeach
-
                             </ul>
                         </div>
                         <div class="widget">
@@ -126,5 +123,5 @@
             </div>
         </div>
     </section>
-    <!-- blog-details-area-end -->
+    <!-- blog-area-end -->
 @endsection

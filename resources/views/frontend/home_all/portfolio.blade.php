@@ -1,7 +1,7 @@
 @php
     $portfolios = App\Models\portfolios::latest()->get();
 @endphp
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8">
