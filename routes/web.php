@@ -4,6 +4,7 @@ use App\Http\Controllers\About\AboutControllers;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
@@ -89,6 +90,13 @@ Route::controller( BlogController::class )->group( function () {
     Route::get( '/blog/details/{id}', 'blogDetails' )->name( 'blog.details' );
     Route::get( '/category/blogs/{id}', 'categoryBlogs' )->name( 'category.blogs' );
     Route::get( '/out/blog', 'blogPage' )->name( 'blog.page' );
+} );
+
+//Footer all route
+Route::controller( FooterController::class )->group( function () {
+    //Seeding footer demo data command=> php artisan db:seed --class=FooterSeeder
+    Route::get( '/footer/setup', 'footerSetup' )->name( 'footer.setup' );
+    Route::patch( '/footer/setup/{id}', 'updateFooter' )->name( 'update.footer' );
 } );
 
 require __DIR__ . '/auth.php';
