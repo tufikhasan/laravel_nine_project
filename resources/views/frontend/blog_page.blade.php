@@ -47,7 +47,7 @@
                             <div class="standard__blog__content">
                                 <h2 class="title"><a
                                         href="{{ route('blog.details', $data->id) }}">{{ $data->blog_title }}</a></h2>
-                                <p>{!! $data->blog_description !!}</p>
+                                <p>{!! Str::limit($data->blog_description, 60) !!}</p>
                                 <ul class="blog__post__meta">
                                     <li><i class="fal fa-calendar-alt"></i>
                                         {{ Carbon\Carbon::parse($data->created_at)->diffForHumans() }}</li>
