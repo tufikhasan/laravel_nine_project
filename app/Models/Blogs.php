@@ -12,4 +12,8 @@ class Blogs extends Model {
     function categoryFun() {
         return $this->belongsTo( BlogCategory::class, 'blog_category_id', 'id' );
     }
+
+    static function catWiseBlogsCount( $cat_id ) {
+        return Blogs::where( 'blog_category_id', $cat_id )->count();
+    }
 }
