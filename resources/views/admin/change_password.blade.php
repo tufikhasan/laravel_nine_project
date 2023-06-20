@@ -1,4 +1,7 @@
 @extends('admin.admin_master')
+@section('site_title')
+    Change Password | Devland
+@endsection
 @section('admin')
     <div class="page-content">
         <div class="container-fluid">

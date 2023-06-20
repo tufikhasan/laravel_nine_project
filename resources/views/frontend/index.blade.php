@@ -1,6 +1,6 @@
 @extends('frontend.app_master')
 @section('site_title')
-    Rasalina - Personal Portfolio
+    DevLand - Personal Portfolio
 @endsection
 @section('main')
     @include('frontend.home_all.home_slide')

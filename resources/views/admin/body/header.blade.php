@@ -8,7 +8,7 @@
                         <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="logo-dark" height="20">
+                        <img src="{{ asset('backend/assets/images/logo_black.svg') }}" alt="logo-dark" height="20">
                     </span>
                 </a>
 
@@ -17,7 +17,7 @@
                         <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm-light" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-light.png') }}" alt="logo-light" height="20">
+                        <img src="{{ asset('backend/assets/images/logo_white.svg') }}" alt="logo-light" height="20">
                     </span>
                 </a>
             </div>

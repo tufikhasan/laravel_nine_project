@@ -1,29 +1,11 @@
 <!-- ========== Left Sidebar Start ========== -->
 <div class="vertical-menu">
-
     <div data-simplebar class="h-100">
-        @php
-            $id = Auth::user()->id;
-            $userData = App\Models\User::find($id);
-        @endphp
-        <!-- User details -->
-        <div class="user-profile text-center mt-3">
-            <div class="">
-                <img src="{{ !empty($userData->profile_image) ? url('upload/admin_images/' . $userData->profile_image) : url('upload/no_image.jpg') }}"
-                    alt="{{ $userData->name }}" class="avatar-md rounded-circle">
-            </div>
-            <div class="mt-3">
-                <h4 class="font-size-16 mb-1">{{ $userData->name }}</h4>
-                <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i>
-                    Online</span>
-            </div>
-        </div>
-
         <!--- Sidemenu -->
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Menu</li>
+                <li class="menu-title">Main section</li>
 
                 <li>
                     <a href="{{ route('dashboard') }}" class="waves-effect">
@@ -33,7 +15,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-building-3-line"></i>
                         <span>Home Slide Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -42,7 +24,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-book-read-line"></i>
                         <span>About Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -51,10 +33,10 @@
                         <li><a href="{{ route('all.multi') }}">All Multi Image</a></li>
                     </ul>
                 </li>
-                <li class="menu-title">Pages</li>
+                <li class="menu-title">Post Section</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-gallery-line"></i>
                         <span>Portfolio Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -64,7 +46,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-list-settings-line"></i>
                         <span>Blog Category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -74,7 +56,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-article-line"></i>
                         <span>Blog Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -82,22 +64,25 @@
                         <li><a href="{{ route('all.blog') }}">All Blogs</a></li>
                     </ul>
                 </li>
-                <li class="menu-title">Pages</li>
 
+                <li class="menu-title">Extra section</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-layout-3-line"></i>
+                        <i class="ri-mail-line"></i>
+                        <span>Contacts</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('all.contact') }}">All Contacts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-contacts-book-line"></i>
                         <span>Footer Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('footer.setup') }}">Footer Setup</a></li>
                     </ul>
-                </li>
-                <li>
-                    <a href="{{ route('all.contact') }}" class="waves-effect">
-                        <i class="ri-layout-3-line"></i>
-                        <span>All Contacts</span>
-                    </a>
                 </li>
             </ul>
         </div>

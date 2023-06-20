@@ -12,9 +12,9 @@
                         <nav class="menu__nav">
                             <div class="logo">
                                 <a href="{{ route('home.page') }}" class="logo__black"><img
-                                        src="{{ asset('frontend/assets/img/logo/logo_black.png') }}" alt="Rasalina"></a>
+                                        src="{{ asset('frontend/assets/img/logo/logo_black.svg') }}" alt="Rasalina"></a>
                                 <a href="{{ route('home.page') }}" class="logo__white"><img
-                                        src="{{ asset('frontend/assets/img/logo/logo_white.png') }}" alt="Rasalina"></a>
+                                        src="{{ asset('frontend/assets/img/logo/logo_white.svg') }}" alt="Rasalina"></a>
                             </div>
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
@@ -42,10 +42,10 @@
                             <div class="close__btn"><i class="fal fa-times"></i></div>
                             <div class="nav-logo">
                                 <a href="{{ route('home.page') }}" class="logo__black"><img
-                                        src="{{ asset('frontend/assets/img/logo/logo_black.png') }}"
+                                        src="{{ asset('frontend/assets/img/logo/logo_black.svg') }}"
                                         alt="Rasalina"></a>
                                 <a href="{{ route('home.page') }}" class="logo__white"><img
-                                        src="{{ asset('frontend/assets/img/logo/logo_white.png') }}"
+                                        src="{{ asset('frontend/assets/img/logo/logo_white.svg') }}"
                                         alt="Rasalina"></a>
                             </div>
                             <div class="menu__outer">

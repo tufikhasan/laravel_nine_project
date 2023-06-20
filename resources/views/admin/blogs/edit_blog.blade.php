@@ -1,4 +1,7 @@
 @extends('admin.admin_master')
+@section('site_title')
+    Blog Edit | Devland
+@endsection
 @section('admin')
     <style type="text/css">
         .bootstrap-tagsinput .tag {
