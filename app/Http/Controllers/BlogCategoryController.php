@@ -30,12 +30,6 @@ class BlogCategoryController extends Controller {
     function updateCategory( Request $request, $id ) {
         $category = BlogCategory::findOrFail( $id );
 
-        $request->validate( [
-            'blog_category' => 'required|string',
-        ], [
-            'blog_category.required' => 'Blog category is required',
-        ] );
-
         $category->update( ['blog_category' => $request->blog_category] );
 
         $notification = [

@@ -10,22 +10,6 @@ class ContactController extends Controller {
         return view( 'frontend.contact.contact_me' );
     }
     function contactUs( Request $request ) {
-        //request validation
-        $request->validate( [
-            'name'    => 'required|string',
-            'email'   => 'required|email',
-            'subject' => 'required|string',
-            'budget'  => 'required',
-            'message' => 'required|string',
-        ], [
-            'name.required'    => 'Name is required',
-            'email.required'   => 'Email is required',
-            'email.email'      => 'Email is not Valid',
-            'subject.required' => 'Subject is required',
-            'budget.required'  => 'Budget is required',
-            'message.required' => 'Message is required',
-        ] );
-
         Contact::insert( [
             'name'    => $request->name,
             'email'   => $request->email,

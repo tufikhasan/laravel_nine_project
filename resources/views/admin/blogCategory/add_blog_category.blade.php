@@ -1,4 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 @extends('admin.admin_master')
 @section('admin')
     <div class="page-content">
@@ -25,7 +24,7 @@
                             <p class="card-title-desc">Add New Blog Category from here</p>
                             <div class="row mb-3">
                                 <label for="title_info" class="col-sm-2 col-form-label">Blog Category Name</label>
-                                <div class="form-group col-sm-10">
+                                <div class="col-sm-10">
                                     <input class="form-control" type="text" id="title_info" name="blog_category"
                                         value="{{ old('blog_category', $blog_category ?? '') }}">
                                 </div>
@@ -39,6 +38,7 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#myForm').validate({

@@ -44,54 +44,32 @@
     <!-- contact-area -->
     <div class="contact-area">
         <div class="container">
-            <form action="#" class="contact__form" method="post" action="{{ route('contact.us') }}">
+            <form id="contactForm" action="#" class="contact__form" method="post" action="{{ route('contact.us') }}">
                 @csrf
                 <div class="row">
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Enter your name*" name="name"
-                            value="{{ old('name', $name ?? '') }}">
-                        <div class="text-start" style="margin-top: -30px">
-                            @error('name')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"
+                            required>
+
                     </div>
-                    <div class="col-md-6">
-                        <input type="email" placeholder="Enter your mail*" name="email"
-                            value="{{ old('email', $email ?? '') }}">
-                        <div class="text-start" style="margin-top: -30px">
-                            @error('email')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Enter your mail*"
+                            name="email" required>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Enter your subject*" name="subject"
-                            value="{{ old('subject', $subject ?? '') }}">
-                        <div class="text-start" style="margin-top: -30px">
-                            @error('subject')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" id="subject" placeholder="Enter your subject*"
+                            name="subject" required>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Your Budget*" name="budget"
-                            value="{{ old('budget', $budget ?? '') }}">
-                        <div class="text-start" style="margin-top: -30px">
-                            @error('budget')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" id="budget" placeholder="Your Budget*" name="budget"
+                            required>
                     </div>
-                </div>
-                <textarea name="message" id="message" placeholder="Enter your massage*">{{ old('message', $message ?? '') }}</textarea>
-                <div class="text-start" style="margin-top: -30px">
-                    @error('message')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
+                    <div class="col-md-12 mb-3">
+                        <textarea class="form-control" name="message" id="message" placeholder="Enter your massage*" required></textarea>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn">send massage</button>
+                <button type="submit" class="btn mt-5">send massage</button>
             </form>
         </div>
     </div>
@@ -173,4 +151,36 @@
         </div>
     </section>
     <!-- contact-area-end -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#contactForm').validate({
+                rules: {
+                    name: 'required',
+                    email: 'required',
+                    subject: 'required',
+                    budget: 'required',
+                    message: 'required'
+                },
+                messages: {
+                    name: 'Please enter your name',
+                    email: 'Please enter your email',
+                    subject: 'Please enter your subject',
+                    budget: 'Please enter your budget',
+                    message: 'Please enter your message'
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    error.insertAfter(element);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid').removeClass('is-valid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid').addClass('is-valid');
+                }
+            });
+        });
+    </script>
 @endsection

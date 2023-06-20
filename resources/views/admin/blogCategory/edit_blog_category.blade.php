@@ -19,7 +19,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <form class="card-body" method="POST" action="{{ route('update.category', $category->id) }}">
+                        <form id="myForm" class="card-body" method="POST"
+                            action="{{ route('update.category', $category->id) }}">
                             @csrf
                             @method('PATCH')
                             <p class="card-title-desc">Edit Blog Category from here</p>
@@ -28,9 +29,6 @@
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" id="title_info" name="blog_category"
                                         value="{{ old('blog_category', $category->blog_category ?? '') }}">
-                                    @error('blog_category')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                                 </div>
                             </div>
                             <!-- end row -->
@@ -42,4 +40,32 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#myForm').validate({
+                rules: {
+                    blog_category: {
+                        required: true
+                    }
+                },
+                messages: {
+                    blog_category: {
+                        required: 'Please enter the blog category name'
+                    }
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    error.insertAfter(element);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid').removeClass('is-valid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid').addClass('is-valid');
+                }
+            });
+        });
+    </script>
 @endsection
