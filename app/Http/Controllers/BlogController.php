@@ -123,7 +123,7 @@ class BlogController extends Controller {
         return view( 'frontend.blogs.category_wise_blog', compact( 'category', 'categoryBlogs', 'allBlogs', 'categories' ) );
     }
     function blogPage() {
-        $allBlogs = Blogs::latest()->get();
+        $allBlogs = Blogs::latest()->paginate( 5 );
         $recentBlog = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
         return view( 'frontend.blogs.blog_page', compact( 'allBlogs', 'recentBlog', 'categories' ) );

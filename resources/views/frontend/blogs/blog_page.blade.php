@@ -61,7 +61,7 @@
                         <img src="{{ asset('no_data.jpg') }}">
                     @endforelse
 
-                    <div class="pagination-wrap">
+                    {{-- <div class="pagination-wrap">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
                                 <li class="page-item"><a class="page-link" href="#"><i
@@ -72,7 +72,8 @@
                                             class="far fa-long-arrow-right"></i></a></li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> --}}
+                    {{ $allBlogs->links('vendor.pagination.bootstrap-5') }}
                 </div>
                 <div class="col-lg-4">
                     <aside class="blog__sidebar">
