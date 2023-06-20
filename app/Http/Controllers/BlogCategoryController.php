@@ -14,12 +14,6 @@ class BlogCategoryController extends Controller {
         return view( 'admin.blogCategory.add_blog_category' );
     }
     function storeCategory( Request $request ) {
-        $request->validate( [
-            'blog_category' => 'required|string',
-        ], [
-            'blog_category.required' => 'Blog category is required',
-        ] );
-
         BlogCategory::insert( ['blog_category' => $request->blog_category] );
 
         $notification = [

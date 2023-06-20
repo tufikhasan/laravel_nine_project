@@ -105,9 +105,9 @@ Route::middleware( ['auth'] )->group( function () {
     //Contact all route
     Route::controller( ContactController::class )->group( function () {
         Route::get( '/all/contact', 'allContact' )->name( 'all.contact' );
-        Route::post( '/contact/page', 'contactUs' )->name( 'contact.us' );
+        Route::post( '/contact', 'contactUs' )->name( 'contact.us' );
         Route::get( '/delete/contact/{id}', 'deleteContact' )->name( 'delete.contact' );
-        Route::get( '/contact', 'contactPage' )->name( 'contact.me' )->withoutMiddleware( 'auth' );
+        Route::get( '/contact', 'contactPage' )->name( 'contact.me' );
     } );
 
 } );

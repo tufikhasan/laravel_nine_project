@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 @extends('admin.admin_master')
 @section('admin')
     <div class="page-content">
@@ -19,17 +20,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <form class="card-body" method="POST" action="{{ route('store.category') }}">
+                        <form id="myForm" class="card-body" method="POST" action="{{ route('store.category') }}">
                             @csrf
                             <p class="card-title-desc">Add New Blog Category from here</p>
                             <div class="row mb-3">
                                 <label for="title_info" class="col-sm-2 col-form-label">Blog Category Name</label>
-                                <div class="col-sm-10">
+                                <div class="form-group col-sm-10">
                                     <input class="form-control" type="text" id="title_info" name="blog_category"
                                         value="{{ old('blog_category', $blog_category ?? '') }}">
-                                    @error('blog_category')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                                 </div>
                             </div>
                             <!-- end row -->
@@ -41,4 +39,31 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#myForm').validate({
+                rules: {
+                    blog_category: {
+                        required: true
+                    }
+                },
+                messages: {
+                    blog_category: {
+                        required: 'Please enter the blog category name'
+                    }
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    error.insertAfter(element);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid').removeClass('is-valid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid').addClass('is-valid');
+                }
+            });
+        });
+    </script>
 @endsection
