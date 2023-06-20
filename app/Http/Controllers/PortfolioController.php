@@ -114,7 +114,7 @@ class PortfolioController extends Controller {
         return view( 'frontend.portfolio.portfolio_details', compact( 'portfolio' ) );
     }
     function portfolioPage() {
-        $portfolios = portfolios::latest()->get();
+        $portfolios = portfolios::latest()->paginate( 5 );
         return view( 'frontend.portfolio.portfolio_page', compact( 'portfolios' ) );
     }
 

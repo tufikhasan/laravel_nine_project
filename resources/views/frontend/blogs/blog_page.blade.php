@@ -61,19 +61,9 @@
                         <img src="{{ asset('no_data.jpg') }}">
                     @endforelse
 
-                    {{-- <div class="pagination-wrap">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#"><i
-                                            class="far fa-long-arrow-left"></i></a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><i
-                                            class="far fa-long-arrow-right"></i></a></li>
-                            </ul>
-                        </nav>
-                    </div> --}}
-                    {{ $allBlogs->links('vendor.pagination.bootstrap-5') }}
+                    <div class="pagination-wrap">
+                        {{ $allBlogs->links('vendor.pagination.custom_pagination') }}
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <aside class="blog__sidebar">

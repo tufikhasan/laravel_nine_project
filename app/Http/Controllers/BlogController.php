@@ -117,7 +117,7 @@ class BlogController extends Controller {
     }
     function categoryBlogs( Request $request, $id ) {
         $category = BlogCategory::findOrFail( $id );
-        $categoryBlogs = Blogs::where( 'blog_category_id', $id )->latest()->get();
+        $categoryBlogs = Blogs::where( 'blog_category_id', $id )->latest()->paginate( 5 );
         $allBlogs = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
         return view( 'frontend.blogs.category_wise_blog', compact( 'category', 'categoryBlogs', 'allBlogs', 'categories' ) );
