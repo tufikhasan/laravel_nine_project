@@ -32,7 +32,7 @@
                     <div class="text-center mt-4">
                         <div class="mb-3">
                             <a href="{{ url('/') }}" class="auth-logo">
-                                <img src="{{ asset('backend/assets/images/logo-dark.png') }}" height="30"
+                                <img src="{{ asset('backend/assets/images/logo_black.svg') }}" height="30"
                                     class="logo-dark mx-auto" alt="Logo">
                             </a>
                         </div>

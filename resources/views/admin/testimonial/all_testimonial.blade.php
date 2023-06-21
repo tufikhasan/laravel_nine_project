@@ -1,6 +1,6 @@
 @extends('admin.admin_master')
 @section('site_title')
-    Multi Images | Devland
+    Testimonials | Devland
 @endsection
 @section('admin')
     <div class="page-content">
@@ -9,11 +9,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">All Multi Images</h4>
+                        <h4 class="mb-sm-0">All Testimonials</h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Upcube</a></li>
-                                <li class="breadcrumb-item active">All Multi Images</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Devland</a></li>
+                                <li class="breadcrumb-item active">All Testimonials</li>
                             </ol>
                         </div>
                     </div>
@@ -30,37 +30,26 @@
                                 <thead>
                                     <tr>
                                         <th>SL NO:</th>
-                                        <th>Name</th>
+                                        <th>Users</th>
+                                        <th>Feedback</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-
-
                                 <tbody>
-                                    @foreach ($allImages as $key => $value)
+                                    @foreach ($testimonals as $key => $value)
                                         <tr>
                                             <td style="width: 20px">{{ $key + 1 }}
                                             </td>
-                                            <td><img src="{{ url('upload/multi/' . $value->image) }}"
-                                                    alt="{{ $key }}" class="rounded avatar-sm"></td>
+                                            <td>{{ $value->user }}</td>
+                                            <td>{{ $value->feedback }}</td>
                                             <td>
-                                                <a href="{{ route('edit.multi.image', $value->id) }}"
+                                                <a href="{{ route('edit.testimonial', $value->id) }}"
                                                     class="btn btn-info sm waves-effect waves-light mr-2"
-                                                    title="Edit Image"><i class="fas fa-edit"></i></a>
+                                                    title="Edit Category"><i class="fas fa-edit"></i></a>
                                                 <a id="delete_data_alert"
-                                                    href="{{ route('delete.multi.image', $value->id) }}"
+                                                    href="{{ route('delete.testimonial', $value->id) }}"
                                                     class="btn btn-danger sm waves-effect waves-light mr-2"
-                                                    title="Delete Image"><i class=" fas fa-trash-alt"></i></a>
-                                                {{-- <form action="{{ route('delete.multi.image', $value->id) }}" method="POST"
-                                                    style="display:inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit"
-                                                        class="btn btn-danger sm waves-effect waves-light mr-2"
-                                                        title="Delete Image">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </form> --}}
+                                                    title="Delete Category"><i class=" fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach

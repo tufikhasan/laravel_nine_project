@@ -22,14 +22,36 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <form class="card-body" method="POST" action="{{ route('multi.image') }}"
+                        <form id="multiImageForm" class="card-body" method="POST" action="{{ route('multi.image') }}"
                             enctype="multipart/form-data">
                             @csrf
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Image Type</label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" aria-label="Multi Image Select Type" name="image_type"
+                                        required>
+                                        <option value="default">Select Image type</option>
+                                        <option value="about"
+                                            {{ old('image_type', isset($image_type) && $image_type == 'about' ? 'selected' : '') }}>
+                                            About
+                                        </option>
+                                        <option value="partners"
+                                            {{ old('image_type', isset($image_type) && $image_type == 'partners' ? 'selected' : '') }}>
+                                            Partners
+                                        </option>
+                                        <option value="testimonial"
+                                            {{ old('image_type', isset($image_type) && $image_type == 'testimonial' ? 'selected' : '') }}>
+                                            Testimonial
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
                             <!-- end row -->
                             <div class="row mb-3">
                                 <label for="p_image" class="col-sm-2 col-form-label">Multi images</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="file" id="p_image" name="image[]" multiple>
+                                    <input class="form-control" type="file" id="p_image" name="image[]" multiple
+                                        required>
                                 </div>
                             </div>
                             <!-- end row -->
@@ -50,6 +72,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
+        //image preview
         $(document).ready(function() {
             $("#p_image").change(function(e) {
                 var reader = new FileReader();

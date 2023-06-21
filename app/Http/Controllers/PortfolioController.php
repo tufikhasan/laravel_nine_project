@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Multi_image;
 use App\Models\portfolios;
 use Illuminate\Http\Request;
 
@@ -111,11 +113,13 @@ class PortfolioController extends Controller {
 
     function detailsPortfolio( Request $request, $id ) {
         $portfolio = portfolios::findOrFail( $id );
-        return view( 'frontend.portfolio.portfolio_details', compact( 'portfolio' ) );
+        $multi_image = Multi_image::where( 'image_type', 'about' )->limit( 6 )->get();
+        return view( 'frontend.portfolio.portfolio_details', compact( 'portfolio', 'multi_image' ) );
     }
     function portfolioPage() {
         $portfolios = portfolios::latest()->paginate( 5 );
-        return view( 'frontend.portfolio.portfolio_page', compact( 'portfolios' ) );
+        $multi_image = Multi_image::where( 'image_type', 'about' )->limit( 6 )->get();
+        return view( 'frontend.portfolio.portfolio_page', compact( 'portfolios', 'multi_image' ) );
     }
 
 }

@@ -1,6 +1,8 @@
 @php
     $aboutData = App\Models\Abouts::find(1);
-    $multi_image = App\Models\Multi_image::all();
+    $multi_image = App\Models\Multi_image::where('image_type', 'about')
+        ->limit(7)
+        ->get();
 @endphp
 <!-- about-area -->
 <section id="aboutSection" class="about">
@@ -10,7 +12,7 @@
                 <ul class="about__icons__wrap">
                     @foreach ($multi_image as $image)
                         <li>
-                            <img class="light" src="{{ url('upload/multi/' . $image->image) }}" alt="XD">
+                            <img class="light" src="{{ url('upload/multi/' . $image->image) }}">
                         </li>
                     @endforeach
 

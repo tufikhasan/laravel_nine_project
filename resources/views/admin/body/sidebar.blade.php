@@ -29,8 +29,35 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('about.info') }}">About Page</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-book-read-line"></i>
+                        <span>Partners Section</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('partner.info') }}">Partners Info Setup</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-image-line"></i>
+                        <span>Multi Images</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('multi.image') }}">Upload Multiple Image</a></li>
                         <li><a href="{{ route('all.multi') }}">All Multi Image</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-image-line"></i>
+                        <span>Testimonials Section</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('add.testimonial') }}">Add New Testimoial</a></li>
+                        <li><a href="{{ route('all.testimonial') }}">All Testimoials</a></li>
                     </ul>
                 </li>
                 <li class="menu-title">Post Section</li>

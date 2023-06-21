@@ -1,6 +1,3 @@
-@php
-    $multi_image = App\Models\Multi_image::take(6)->get();
-@endphp
 @extends('frontend.app_master')
 @section('site_title')
     Contact - Personal Portfolio

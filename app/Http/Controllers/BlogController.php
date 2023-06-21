@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BlogCategory;
 use App\Models\Blogs;
+use App\Models\Multi_image;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller {
@@ -110,22 +111,25 @@ class BlogController extends Controller {
     }
 
     function blogDetails( Request $request, $id ) {
+        $multi_image = Multi_image::where( 'image_type', 'about' )->limit( 6 )->get();
         $blog = Blogs::findOrFail( $id );
         $allBlogs = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
-        return view( 'frontend.blogs.blog_details', compact( 'blog', 'allBlogs', 'categories' ) );
+        return view( 'frontend.blogs.blog_details', compact( 'multi_image', 'blog', 'allBlogs', 'categories' ) );
     }
     function categoryBlogs( Request $request, $id ) {
+        $multi_image = Multi_image::where( 'image_type', 'about' )->limit( 6 )->get();
         $category = BlogCategory::findOrFail( $id );
         $categoryBlogs = Blogs::where( 'blog_category_id', $id )->latest()->paginate( 5 );
         $allBlogs = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
-        return view( 'frontend.blogs.category_wise_blog', compact( 'category', 'categoryBlogs', 'allBlogs', 'categories' ) );
+        return view( 'frontend.blogs.category_wise_blog', compact( 'multi_image', 'category', 'categoryBlogs', 'allBlogs', 'categories' ) );
     }
     function blogPage() {
+        $multi_image = Multi_image::where( 'image_type', 'about' )->limit( 6 )->get();
         $allBlogs = Blogs::latest()->paginate( 5 );
         $recentBlog = Blogs::latest()->limit( 5 )->get();
         $categories = BlogCategory::latest()->get();
-        return view( 'frontend.blogs.blog_page', compact( 'allBlogs', 'recentBlog', 'categories' ) );
+        return view( 'frontend.blogs.blog_page', compact( 'multi_image', 'allBlogs', 'recentBlog', 'categories' ) );
     }
 }

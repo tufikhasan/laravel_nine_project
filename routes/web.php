@@ -7,8 +7,11 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\Home\HomeSlideController;
+use App\Http\Controllers\MultiImageController;
+use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 Route::get( '/dashboard', function () {
@@ -48,13 +51,16 @@ Route::middleware( ['auth'] )->group( function () {
         Route::get( '/about/info', 'aboutInfo' )->name( 'about.info' );
         Route::post( '/update/about/{id}', 'updateAbout' )->name( 'update.about' );
         Route::get( '/about', 'aboutPage' )->name( 'about.page' )->withoutMiddleware( 'auth' );
+    } );
 
+    //Multi image All route
+    Route::controller( MultiImageController::class )->group( function () {
         Route::get( '/multi/image', 'multiImage' )->name( 'multi.image' );
         Route::post( '/multi/image', 'storeMultiImage' )->name( 'multi.image' );
         Route::get( '/all/multi', 'allMultiImage' )->name( 'all.multi' );
 
         Route::get( '/multi/image/{id}', 'editMultiImage' )->name( 'edit.multi.image' );
-        Route::post( '/multi/image/{id}', 'updateMultiImage' )->name( 'update.multi.image' );
+        Route::patch( '/multi/image/{id}', 'updateMultiImage' )->name( 'update.multi.image' );
         Route::get( '/delete/multi/image/{id}', 'deleteMultiImage' )->name( 'delete.multi.image' );
 
     } );
@@ -97,7 +103,6 @@ Route::middleware( ['auth'] )->group( function () {
 
     //Footer all route
     Route::controller( FooterController::class )->group( function () {
-        //Seeding footer demo data command=> php artisan db:seed --class=FooterSeeder
         Route::get( '/footer/setup', 'footerSetup' )->name( 'footer.setup' );
         Route::patch( '/footer/setup/{id}', 'updateFooter' )->name( 'update.footer' );
     } );
@@ -108,6 +113,21 @@ Route::middleware( ['auth'] )->group( function () {
         Route::post( '/contact', 'contactUs' )->name( 'contact.us' );
         Route::get( '/delete/contact/{id}', 'deleteContact' )->name( 'delete.contact' );
         Route::get( '/contact', 'contactPage' )->name( 'contact.me' );
+    } );
+
+    //Testimonial all route
+    Route::controller( TestimonialController::class )->group( function () {
+        Route::get( '/all/testimonial', 'allTestimonial' )->name( 'all.testimonial' );
+        Route::get( '/add/testimonial', 'addTestimonial' )->name( 'add.testimonial' );
+        Route::post( '/add/testimonial', 'storeTestimonial' )->name( 'store.testimonial' );
+        Route::get( '/edit/testimonial/{id}', 'editTestimonial' )->name( 'edit.testimonial' );
+        Route::patch( '/edit/testimonial/{id}', 'updateTestimonial' )->name( 'update.testimonial' );
+        Route::get( '/delete/testimonial/{id}', 'deleteTestimonial' )->name( 'delete.testimonial' );
+    } );
+    //Testimonial all route
+    Route::controller( PartnerController::class )->group( function () {
+        Route::get( '/partner', 'partnerInfo' )->name( 'partner.info' );
+        Route::patch( '/partner/{id}', 'updatePartnerInfo' )->name( 'update.partnerInfo' );
     } );
 
 } );

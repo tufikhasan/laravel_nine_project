@@ -11,10 +11,10 @@ return new class extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create( 'multi_images', function ( Blueprint $table ) {
+        Schema::create( 'testimonials', function ( Blueprint $table ) {
             $table->id();
-            $table->string( 'image_type' );
-            $table->string( 'image' );
+            $table->string( 'user' )->nullable();
+            $table->string( 'feedback' )->nullable();
             $table->timestamp( 'created_at' )->useCurrent();
             $table->timestamp( 'updated_at' )->useCurrent()->useCurrentOnUpdate();
         } );
@@ -26,6 +26,6 @@ return new class extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists( 'multi_images' );
+        Schema::dropIfExists( 'testimonials' );
     }
 };
