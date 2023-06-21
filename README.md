@@ -1,11 +1,11 @@
-## All seeding
+## Run multiple seeders in one command
 
 ```
 php artisan db:seed
 
 ```
 
-## Specific seeding
+## Run Specific seeder
 
 ```
 php artisan db:seed --class=HomeSeeder
