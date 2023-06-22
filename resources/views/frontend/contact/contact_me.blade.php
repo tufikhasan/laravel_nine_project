@@ -41,7 +41,7 @@
     <!-- contact-area -->
     <div class="contact-area">
         <div class="container">
-            <form id="contactForm" action="#" class="contact__form" method="post" action="{{ route('contact.us') }}">
+            <form id="contactForm" class="contact__form" method="post" action="{{ route('contact.us') }}">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -116,38 +116,12 @@
     </section>
     <!-- contact-info-area-end -->
 
-    <!-- contact-area -->
-    <section class="homeContact homeContact__style__two">
-        <div class="container">
-            <div class="homeContact__wrap">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="section__title">
-                            <span class="sub-title">07 - Say hello</span>
-                            <h2 class="title">Any questions? Feel free <br> to contact</h2>
-                        </div>
-                        <div class="homeContact__content">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form</p>
-                            <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="homeContact__form">
-                            <form action="#">
-                                <input type="text" placeholder="Enter name*">
-                                <input type="email" placeholder="Enter mail*">
-                                <input type="number" placeholder="Enter number*">
-                                <textarea name="message" placeholder="Enter Massage*"></textarea>
-                                <button type="submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- contact-area-end -->
+    <!-- Say-Hello -->
+    @include('frontend.components.say_hello', [
+        'sayHelloSectionCss' => 'homeContact homeContact__style__two',
+    ])
+    <!-- Say-Hello -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {

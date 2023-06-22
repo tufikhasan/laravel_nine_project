@@ -290,4 +290,9 @@
         </div>
     </section>
     <!-- about-area-end -->
+    <!-- Say-Hello -->
+    @include('frontend.components.say_hello', [
+        'sayHelloSectionCss' => 'homeContact homeContact__style__two',
+    ])
+    <!-- Say-Hello -->
 @endsection

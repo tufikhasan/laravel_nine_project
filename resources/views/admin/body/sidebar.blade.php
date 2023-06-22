@@ -22,13 +22,44 @@
                         <li><a href="{{ route('home.slide') }}">Home banner</a></li>
                     </ul>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-book-read-line"></i>
                         <span>About Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('about.info') }}">About Page</a></li>
+                    </ul>
+                </li> --}}
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="true">
+                        <i class="ri-book-read-line"></i>
+                        <span>About Page Setup</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="true" style="">
+                        <li><a href="javascript: void(0);" class="has-arrow" aria-expanded="true">About info</a>
+                            <ul class="sub-menu mm-collapse" aria-expanded="true" style="">
+                                <li><a href="{{ route('about.info') }}">About</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript: void(0);" class="has-arrow" aria-expanded="true">Skills</a>
+                            <ul class="sub-menu mm-collapse" aria-expanded="true" style="">
+                                <li><a href="{{ route('all.skill') }}">All Skills</a></li>
+                                <li><a href="{{ route('add.skill') }}">Add New Skill</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript: void(0);" class="has-arrow" aria-expanded="true">Awards</a>
+                            <ul class="sub-menu mm-collapse" aria-expanded="true" style="">
+                                <li><a href="{{ route('all.award') }}">All Awards</a></li>
+                                <li><a href="{{ route('add.award') }}">Add New Award</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript: void(0);" class="has-arrow" aria-expanded="true">Education</a>
+                            <ul class="sub-menu mm-collapse" aria-expanded="true" style="">
+                                <li><a href="{{ route('all.education') }}">All Education</a></li>
+                                <li><a href="{{ route('add.education') }}">Add New Education</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -48,6 +79,16 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('multi.image') }}">Upload Multiple Image</a></li>
                         <li><a href="{{ route('all.multi') }}">All Multi Image</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-image-line"></i>
+                        <span>Services Section</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('add.service') }}">Add New Service</a></li>
+                        <li><a href="{{ route('all.service') }}">All Services</a></li>
                     </ul>
                 </li>
                 <li>

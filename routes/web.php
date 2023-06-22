@@ -11,6 +11,7 @@ use App\Http\Controllers\MultiImageController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,27 @@ Route::middleware( ['auth'] )->group( function () {
         Route::get( '/about/info', 'aboutInfo' )->name( 'about.info' );
         Route::post( '/update/about/{id}', 'updateAbout' )->name( 'update.about' );
         Route::get( '/about', 'aboutPage' )->name( 'about.page' )->withoutMiddleware( 'auth' );
+
+        Route::get( '/all/skill', 'allSkill' )->name( 'all.skill' );
+        Route::get( '/add/skill', 'addSkill' )->name( 'add.skill' );
+        Route::post( '/add/skill', 'storeSkill' )->name( 'store.skill' );
+        Route::get( '/edit/skill/{id}', 'editSkill' )->name( 'edit.skill' );
+        Route::patch( '/edit/skill/{id}', 'updateSkill' )->name( 'update.skill' );
+        Route::get( '/delete/skill/{id}', 'deleteSkill' )->name( 'delete.skill' );
+
+        Route::get( '/all/award', 'allAward' )->name( 'all.award' );
+        Route::get( '/add/award', 'addAward' )->name( 'add.award' );
+        Route::post( '/add/award', 'storeAward' )->name( 'store.award' );
+        Route::get( '/edit/award/{id}', 'editAward' )->name( 'edit.award' );
+        Route::patch( '/edit/award/{id}', 'updateAward' )->name( 'update.award' );
+        Route::get( '/delete/award/{id}', 'deleteAward' )->name( 'delete.award' );
+
+        Route::get( '/all/education', 'allEducation' )->name( 'all.education' );
+        Route::get( '/add/education', 'addEducation' )->name( 'add.education' );
+        Route::post( '/add/education', 'storeEducation' )->name( 'store.education' );
+        Route::get( '/edit/education/{id}', 'editEducation' )->name( 'edit.education' );
+        Route::patch( '/edit/education/{id}', 'updateEducation' )->name( 'update.education' );
+        Route::get( '/delete/education/{id}', 'deleteEducation' )->name( 'delete.education' );
     } );
 
     //Multi image All route
@@ -128,6 +150,15 @@ Route::middleware( ['auth'] )->group( function () {
     Route::controller( PartnerController::class )->group( function () {
         Route::get( '/partner', 'partnerInfo' )->name( 'partner.info' );
         Route::patch( '/partner/{id}', 'updatePartnerInfo' )->name( 'update.partnerInfo' );
+    } );
+    //Testimonial all route
+    Route::controller( ServiceController::class )->group( function () {
+        Route::get( '/all/services', 'allService' )->name( 'all.service' );
+        Route::get( '/add/service', 'addService' )->name( 'add.service' );
+        Route::post( '/add/service', 'storeService' )->name( 'store.service' );
+        Route::get( '/edit/service/{id}', 'editService' )->name( 'edit.service' );
+        Route::patch( '/edit/service/{id}', 'updateService' )->name( 'update.service' );
+        Route::get( '/delete/service/{id}', 'deleteService' )->name( 'delete.service' );
     } );
 
 } );
