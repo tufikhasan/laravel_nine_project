@@ -1,3 +1,6 @@
+@php
+    $data = App\Models\Footer::find(1);
+@endphp
 <section class="{{ $sayHelloSectionCss }}">
     <div class="container">
         <div class="homeContact__wrap">
@@ -10,7 +13,7 @@
                     <div class="homeContact__content">
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                             suffered alteration in some form</p>
-                        <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
+                        <h2 class="mail"><a href="mailto:{{ $data->email }}">{{ $data->email }}</a></h2>
                     </div>
                 </div>
                 <div class="col-lg-6">

@@ -63,7 +63,10 @@ class AboutControllers extends Controller {
     function aboutPage() {
         $aboutData = Abouts::find( 1 );
         $multi_image = Multi_image::where( 'image_type', 'about' )->limit( 6 )->get();
-        return view( 'frontend.about.about_page', compact( 'aboutData', 'multi_image' ) );
+        $skills = Skill::latest()->get();
+        $awards = Awards::latest()->get();
+        $educations = Education::latest()->get();
+        return view( 'frontend.about.about_page', compact( 'aboutData', 'multi_image', 'skills', 'awards', 'educations' ) );
     }
 
     //Skill all method from here

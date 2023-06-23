@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Login | Upcube</title>
+    <title>Login | Devland</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
@@ -43,6 +43,15 @@
                     <div class="p-3">
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('login') }}">
                             @csrf
+                            @if (count($errors))
+                                @foreach ($errors->all() as $error)
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ $error }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endforeach
+                            @endif
                             <div class="form-group mb-3 row">
                                 <div class="col-12">
                                     <input class="form-control" type="text" required="" id="username"

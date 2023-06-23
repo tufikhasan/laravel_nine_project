@@ -12,7 +12,7 @@
                 <li class="rc__post__item">
                     <div class="rc__post__thumb">
                         <a href="{{ route('blog.details', $data->id) }}"><img
-                                src="{{ !empty($data->blog_image) ? url('upload/blog/' . $data->blog_image) : url('upload/portfolio.jpg') }}"
+                                src="{{ !empty($data->blog_image) ? url('upload/blog/' . $data->blog_image) : url('upload/service.png') }}"
                                 alt="{{ $data->blog_title }}"></a>
 
                     </div>

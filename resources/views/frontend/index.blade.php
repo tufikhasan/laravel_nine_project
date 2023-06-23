@@ -27,9 +27,7 @@
                     <div class="work__process__item">
                         <span class="work__process_step">Step - 01</span>
                         <div class="work__process__icon">
-                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon01.png') }}"
-                                alt="">
-                            <img class="dark" src="{{ asset('frontend/assets/img/icons/wp_icon01.png') }}" alt="">
+                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon01.png') }}">
                         </div>
                         <div class="work__process__content">
                             <h4 class="title">Discover</h4>
@@ -41,9 +39,7 @@
                     <div class="work__process__item">
                         <span class="work__process_step">Step - 02</span>
                         <div class="work__process__icon">
-                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon02.png') }}"
-                                alt="">
-                            <img class="dark" src="{{ asset('frontend/assets/img/icons/wp_icon02.png') }}" alt="">
+                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon02.png') }}">
                         </div>
                         <div class="work__process__content">
                             <h4 class="title">Define</h4>
@@ -55,9 +51,7 @@
                     <div class="work__process__item">
                         <span class="work__process_step">Step - 03</span>
                         <div class="work__process__icon">
-                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon03.png') }}"
-                                alt="">
-                            <img class="dark" src="{{ asset('frontend/assets/img/icons/wp_icon03.png') }}" alt="">
+                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon03.png') }}">
                         </div>
                         <div class="work__process__content">
                             <h4 class="title">Develop</h4>
@@ -69,9 +63,7 @@
                     <div class="work__process__item">
                         <span class="work__process_step">Step - 04</span>
                         <div class="work__process__icon">
-                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon04.png') }}"
-                                alt="">
-                            <img class="dark" src="{{ asset('frontend/assets/img/icons/wp_icon04.png') }}" alt="">
+                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon04.png') }}">
                         </div>
                         <div class="work__process__content">
                             <h4 class="title">Deliver</h4>

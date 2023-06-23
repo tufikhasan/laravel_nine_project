@@ -11,7 +11,7 @@
                     <div class="blog__post__item">
                         <div class="blog__post__thumb">
                             <a href="{{ route('blog.details', $blog->id) }}">
-                                <img src="{{ !empty($blog->blog_image) ? url('upload/blog/' . $blog->blog_image) : url('upload/portfolio.jpg') }}"
+                                <img src="{{ !empty($blog->blog_image) ? url('upload/blog/' . $blog->blog_image) : url('upload/service.png') }}"
                                     alt="{{ $blog->blog_title }}">
                             </a>
                             <div class="blog__post__tags">

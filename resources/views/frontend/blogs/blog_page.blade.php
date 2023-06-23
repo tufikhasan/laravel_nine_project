@@ -39,7 +39,7 @@
                         <div class="standard__blog__post">
                             <div class="standard__blog__thumb">
                                 <a href="{{ route('blog.details', $data->id) }}"><img
-                                        src="{{ !empty($data->blog_image) ? url('upload/blog/' . $data->blog_image) : url('upload/portfolio.jpg') }}"
+                                        src="{{ !empty($data->blog_image) ? url('upload/blog/' . $data->blog_image) : url('upload/service.png') }}"
                                         alt="{{ $data->blog_title }}"></a>
                                 <a href="{{ route('blog.details', $data->id) }}" class="blog__link"><i
                                         class="far fa-long-arrow-right"></i></a>

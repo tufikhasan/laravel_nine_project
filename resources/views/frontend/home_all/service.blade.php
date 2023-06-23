@@ -24,7 +24,7 @@
                     <div class="services__item">
                         <div class="services__thumb">
                             <a href="services-details.html"><img
-                                    src="{{ !empty($service->image) ? url('upload/service/' . $service->image) : url('upload/service.jpg') }}"
+                                    src="{{ !empty($service->image) ? url('upload/service/' . $service->image) : url('upload/blog.png') }}"
                                     alt="{{ $service->title }}"></a>
                         </div>
                         <div class="services__content">
@@ -32,7 +32,7 @@
                                 <img class="light" src="{{ url('upload/service/' . $service->icon) }}"
                                     alt="{{ $service->title }}">
                             </div>
-                            <h3 class="title"><a href="services-details.html">{{ $service->title }}</a></h3>
+                            <h3 class="title"><a>{{ $service->title }}</a></h3>
                             <p>{{ $service->description }}</p>
                             <ul class="services__list">
                                 @php
@@ -42,7 +42,6 @@
                                     <li>{{ $list }}</li>
                                 @endforeach
                             </ul>
-                            <a href="services-details.html" class="btn border-btn">Read more</a>
                         </div>
                     </div>
                 </div>

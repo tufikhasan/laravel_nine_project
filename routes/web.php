@@ -5,29 +5,21 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\MultiImageController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
-Route::get( '/dashboard', function () {
-    return view( 'admin.index' );
-} )->middleware( ['auth', 'verified'] )->name( 'dashboard' );
-
-Route::middleware( 'auth' )->group( function () {
-    Route::get( '/profile', [ProfileController::class, 'edit'] )->name( 'profile.edit' );
-    Route::patch( '/profile', [ProfileController::class, 'update'] )->name( 'profile.update' );
-    Route::delete( '/profile', [ProfileController::class, 'destroy'] )->name( 'profile.destroy' );
-} );
-
 Route::get( '/', function () {
     return view( 'frontend.index' );
 } )->name( 'home.page' );
+
+Route::get( '/dashboard', [DashboardController::class, 'dashboardMethod'] )->middleware( ['auth', 'verified'] )->name( 'dashboard' );
 
 Route::middleware( ['auth'] )->group( function () {
 

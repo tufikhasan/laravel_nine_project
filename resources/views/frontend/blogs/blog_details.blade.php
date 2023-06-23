@@ -37,7 +37,7 @@
                 <div class="col-lg-8">
                     <div class="standard__blog__post">
                         <div class="standard__blog__thumb">
-                            <img src="{{ !empty($blog->blog_image) ? url('upload/blog/' . $blog->blog_image) : url('upload/portfolio.jpg') }}"
+                            <img src="{{ !empty($blog->blog_image) ? url('upload/blog/' . $blog->blog_image) : url('upload/service.png') }}"
                                 alt="{{ $blog->blog_title }}">
                         </div>
                         <div class="blog__details__content services__details__content">

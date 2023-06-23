@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="services__details__thumb">
-                        <img src="{{ !empty($portfolio->portfolio_image) ? url('upload/portfolio/' . $portfolio->portfolio_image) : url('upload/portfolio.jpg') }}"
+                        <img src="{{ !empty($portfolio->portfolio_image) ? url('upload/portfolio/' . $portfolio->portfolio_image) : url('upload/portfolio.png') }}"
                             alt="{{ $portfolio->portfolio_title }}">
                     </div>
                     <div class="services__details__content">

@@ -1,3 +1,6 @@
+@php
+    $data = App\Models\Footer::find(1);
+@endphp
 @extends('frontend.app_master')
 @section('site_title')
     Contact - Personal Portfolio
@@ -83,7 +86,7 @@
                         </div>
                         <div class="contact__info__content">
                             <h4 class="title">address line</h4>
-                            <span>Bowery St, New York, <br> NY 10013,USA</span>
+                            <span>{{ $data->address }}</span>
                         </div>
                     </div>
                 </div>
@@ -94,8 +97,7 @@
                         </div>
                         <div class="contact__info__content">
                             <h4 class="title">Phone Number</h4>
-                            <span>+1255 - 568 - 6523</span>
-                            <span>+1255 - 568 - 6523</span>
+                            <span>{{ $data->number }}</span>
                         </div>
                     </div>
                 </div>
@@ -106,8 +108,7 @@
                         </div>
                         <div class="contact__info__content">
                             <h4 class="title">Mail Address</h4>
-                            <span>email@example.com</span>
-                            <span>info@yourdomain.com</span>
+                            <span>{{ $data->email }}</span>
                         </div>
                     </div>
                 </div>

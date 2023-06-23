@@ -21,7 +21,7 @@
                             @forelse ($portfolios as $portfolio)
                                 <div class="portfolio__item">
                                     <div class="portfolio__thumb">
-                                        <img src="{{ !empty($portfolio->portfolio_image) ? url('upload/portfolio/' . $portfolio->portfolio_image) : url('upload/portfolio.jpg') }}"
+                                        <img src="{{ !empty($portfolio->portfolio_image) ? url('upload/portfolio/' . $portfolio->portfolio_image) : url('upload/portfolio.png') }}"
                                             alt="{{ $portfolio->portfolio_title }}">
                                     </div>
                                     <div class="portfolio__overlay__content">

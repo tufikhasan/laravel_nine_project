@@ -5,14 +5,13 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Main section</li>
-
                 <li>
                     <a href="{{ route('dashboard') }}" class="waves-effect">
-                        <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
+                        <i class="ri-dashboard-line"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li class="menu-title">Home Page Section</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-building-3-line"></i>
@@ -22,18 +21,9 @@
                         <li><a href="{{ route('home.slide') }}">Home banner</a></li>
                     </ul>
                 </li>
-                {{-- <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-book-read-line"></i>
-                        <span>About Page Setup</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('about.info') }}">About Page</a></li>
-                    </ul>
-                </li> --}}
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="true">
-                        <i class="ri-book-read-line"></i>
+                        <i class="ri-keyboard-line"></i>
                         <span>About Page Setup</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="true" style="">
@@ -64,13 +54,34 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-book-read-line"></i>
+                        <i class="ri-team-line"></i>
                         <span>Partners Section</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('partner.info') }}">Partners Info Setup</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-briefcase-line"></i>
+                        <span>Services Section</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('add.service') }}">Add New Service</a></li>
+                        <li><a href="{{ route('all.service') }}">All Services</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-inbox-fill"></i>
+                        <span>Testimonials Section</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('add.testimonial') }}">Add New Testimoial</a></li>
+                        <li><a href="{{ route('all.testimonial') }}">All Testimoials</a></li>
+                    </ul>
+                </li>
+                <li class="menu-title">Post Section</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-image-line"></i>
@@ -81,27 +92,6 @@
                         <li><a href="{{ route('all.multi') }}">All Multi Image</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-image-line"></i>
-                        <span>Services Section</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('add.service') }}">Add New Service</a></li>
-                        <li><a href="{{ route('all.service') }}">All Services</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-image-line"></i>
-                        <span>Testimonials Section</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('add.testimonial') }}">Add New Testimoial</a></li>
-                        <li><a href="{{ route('all.testimonial') }}">All Testimoials</a></li>
-                    </ul>
-                </li>
-                <li class="menu-title">Post Section</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-gallery-line"></i>
@@ -136,7 +126,7 @@
                 <li class="menu-title">Extra section</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-mail-line"></i>
+                        <i class="ri-mail-check-fill"></i>
                         <span>Contacts</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
